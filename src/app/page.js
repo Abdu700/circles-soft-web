@@ -34,15 +34,15 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${isScrolled
-          ? 'py-3 bg-white/80 backdrop-blur-2xl border-b border-gray-100/50 shadow-sm'
-          : 'py-6 bg-transparent'
+        ? 'py-3 bg-white/80 backdrop-blur-2xl border-b border-gray-100/50 shadow-sm'
+        : 'py-6 bg-transparent'
         }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo Replacement */}
         <div className="flex items-center space-x-3 space-x-reverse cursor-pointer group">
           <div className="w-12 h-12 relative overflow-hidden rounded-full border border-gray-100/20 shadow-lg group-hover:scale-110 transition-transform duration-500">
-            <img src="/logo.jpeg" alt="CirclesSoft" className="w-full h-full object-cover" />
+            <img src="/main-logo.png" alt="CirclesSoft" className="w-full h-full object-contain" />
           </div>
           <span className={`text-2xl font-black tracking-tight transition-colors duration-300 ${isScrolled ? 'text-[#0d0d0d]' : 'text-white'}`}>
             Circles<span className={`${isScrolled ? 'text-gray-400' : 'text-white/40'} group-hover:text-[#4034e0] transition-colors`}>Soft</span>
@@ -191,11 +191,15 @@ const products = [
 ];
 
 const AbstractCircles = () => (
-  <div className="relative w-full h-full flex items-center justify-center opacity-40 animate-spin-slow">
-    <div className="absolute w-[90%] h-[90%] border-[2px] border-[#4034e0]/10 rounded-full animate-pulse blur-[1px]" />
-    <div className="absolute w-[70%] h-[70%] border-[3px] border-[#e40046]/20 rounded-full animate-[ping_4s_linear_infinite]" />
-    <div className="absolute w-[50%] h-[50%] border-[4px] border-[#4034e0]/10 rounded-full blur-[2px]" />
-    <div className="absolute w-[30%] h-[30%] border-[2px] border-[#e40046]/30 rounded-full" />
+  <div className="relative w-full h-full flex items-center justify-center opacity-90">
+    {/* Multiple layers of rotating and pulsing circles for a premium "tech" feel */}
+    <div className="absolute w-[115%] h-[115%] border-[1px] border-[#4034e0]/10 rounded-full animate-spin-slow" />
+    <div className="absolute w-[100%] h-[100%] border-[1px] border-[#e40046]/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+    <div className="absolute w-[85%] h-[85%] border-[2px] border-[#4034e0]/20 rounded-full animate-spin-slow" />
+    <div className="absolute w-[70%] h-[70%] border-[2px] border-[#e40046]/30 rounded-full animate-[spin_25s_linear_infinite_reverse]" />
+    <div className="absolute w-[55%] h-[55%] border-[3px] border-[#4034e0]/20 rounded-full blur-[1px] animate-spin-slow" />
+    <div className="absolute w-[40%] h-[40%] border-[2px] border-[#e40046]/40 rounded-full animate-[ping_4s_linear_infinite]" />
+    <div className="absolute w-[25%] h-[25%] border-[1px] border-[#4034e0]/50 rounded-full animate-pulse" />
   </div>
 );
 
@@ -262,18 +266,6 @@ export default function CirclesSoftHomepage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#060606]/80 via-transparent to-transparent opacity-60" />
             </div>
 
-            {/* Dynamic Card */}
-            <div className="absolute top-[20%] -right-8 lg:-right-16 bg-white/10 backdrop-blur-3xl border border-white/20 p-6 rounded-[2rem] shadow-2xl z-20 animate-[float_5s_ease-in-out_infinite]">
-              <div className="flex items-center space-x-4 space-x-reverse">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: COLORS.gradient }}>
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-white/50 font-bold uppercase tracking-wider">الأمان والموثوقية</div>
-                  <div className="text-lg font-black text-white">بياناتك دائماً محمية</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -366,7 +358,7 @@ export default function CirclesSoftHomepage() {
               <div className="flex items-center space-x-4 space-x-reverse justify-end">
                 <span className="text-4xl font-black tracking-tight text-[#0d0d0d]">Circles<span className="text-gray-300">Soft</span></span>
                 <div className="w-14 h-14 rounded-[1.5rem] flex items-center justify-center shadow-2xl relative overflow-hidden">
-                  <img src="/logo.jpeg" alt="Logo" className="w-full h-full object-cover" />
+                  <img src="/main-logo.png" alt="Logo" className="w-full h-full object-contain" />
                 </div>
               </div>
               <p className="text-gray-400 text-xl font-light leading-relaxed max-w-lg mr-0 ml-auto">
